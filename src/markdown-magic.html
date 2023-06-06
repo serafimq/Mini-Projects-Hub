@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animations scroll</title>
+  <title>Mini-projects-hub</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations_scroll.css">
+  <link rel="stylesheet" href="css/markdown-magic.css">
 </head>
 
 <body>
@@ -23,20 +23,16 @@
       </ul>
     </nav>
     <main>
-      <h1>Animations scroll</h1>
-      <div class="animation_scroll__wrapper">
-        <div class="box">Box 1</div>
-        <div class="box">Box 2</div>
-        <div class="box">Box 3</div>
-        <div class="box">Box 4</div>
-        <div class="box">Box 5</div>
-        <div class="box">Box 6</div>
-        <div class="box">Box 7</div>
-        <div class="box">Box 8</div>
+      <h1>Markdown Magic</h1>
+      <div class="markdown_wrapper" id="markdown_wrapper">
+        <textarea name="markdown" id="source" cols="30" rows="30" class="source"></textarea>
+        <div class="divider" id="divider"></div>
+        <div class="preview" id="preview"></div>
       </div>
     </main>
   </div>
-  <script src="js/animations_scroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/markdown-magic.js"></script>
 </body>
 
 </html>
