@@ -29,8 +29,9 @@
     border: none;
     font-size: 1.2em;
 }
+
 .source:focus {
-    outline: none;.
+    outline: none;
 }
 
 .preview {

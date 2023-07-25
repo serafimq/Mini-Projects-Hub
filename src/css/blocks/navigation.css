@@ -1,0 +1,28 @@
+.navigation {
+    display: grid;
+    grid-template-columns: 1fr min-content max-content;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.navigation__gap {
+    margin-left: auto;
+}
+
+.navigation__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.navigation__link {
+    padding: 5px;   
+    color: #202124;
+    text-decoration: none;
+}
+
+.navigation__link:hover {
+    text-decoration: underline;
+}
