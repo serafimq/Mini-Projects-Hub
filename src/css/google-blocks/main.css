@@ -1,8 +1,6 @@
 .main {
     padding: 15px 30px;
     display: grid;
-    /* place-content: center; */
-    /* justify-content: center; */
     justify-items: center;
     align-content: center;
     row-gap: 30px;
