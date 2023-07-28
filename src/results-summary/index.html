@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/results-summary/favicon-32x32.png">
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <!-- styles -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/results-summary/style.css">
+
+  <title>Frontend Mentor | Results summary component</title>
+</head>
+<body>
+  <article class="card-result">
+    <div class="card-result__result result">
+      <h3 class="result__title title">Your Result</h3>
+      <div class="result__rating">
+        <p class="result__your-rating">76</p>
+        <p>of 100</p>
+      </div>
+      <h2>Great</h2>
+      <p class="result__text">You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
+    <div class="card-result__summary summary">
+      <h3 class="summary__title title dark-text">Summary</h3>
+      <ul class="summary_list">
+        <li data-item="reaction" class="summary__item flex-group">
+          <span class="summary__item-title">Reaction</span>
+          <span class="summary__item-rating"><span class="dark-text">80</span> / 100</span>
+        </li>
+        <li data-item="memory" class="summary__item flex-group">
+          <span class="summary__item-title">Memory</span>
+          <span class="summary__item-rating"><span class="dark-text">92</span> / 100</span>
+        </li>
+        <li data-item="verbal" class="summary__item flex-group">
+          <span class="summary__item-title">Verbal</span>
+          <span class="summary__item-rating"><span class="dark-text">61</span> / 100</span>
+        </li>
+        <li data-item="visual" class="summary__item flex-group">
+          <span class="summary__item-title">Visual</span>
+          <span class="summary__item-rating"><span class="dark-text">72</span> / 100</span>
+        </li>
+      </ul>
+      <button class="button">Continue</button>
+    </div>
+  </article>
+</body>
+</html>
