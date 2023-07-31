@@ -29,6 +29,7 @@ main {
 
     display: grid;
     place-content: center;
+    min-height: 100vh;
 }
 
 .flex-group {
@@ -67,7 +68,7 @@ main {
     content: '';
     width: 15px;
     height: 16px;
-    background-image: url('../../../images/product-preview-card/icon-cart.svg');
+    background-image: url('../../images/product-preview-card/icon-cart.svg');
 }
 
 .button:is(:hover, :focus) {
@@ -85,7 +86,7 @@ main {
     max-width: 600px;
 }
 
-@media (min-width: 815px) {
+@media (min-width: 615px) {
     .product {
         --product-padding: 32px;
 

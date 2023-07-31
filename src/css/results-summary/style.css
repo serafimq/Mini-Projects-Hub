@@ -171,22 +171,22 @@ h2 {
 }
 
 .summary__item[data-item="reaction"] {
-    --svg-item-icon: url('../../../images/results-summary/icon-reaction.svg');
+    --svg-item-icon: url('../../images/results-summary/icon-reaction.svg');
     --item-color: var(--clr-primary-red-300);
     --item-bg-color: var(--clr-bg-red-300);
 }
 .summary__item[data-item="memory"] {
-    --svg-item-icon: url('../../../images/results-summary/icon-memory.svg');
+    --svg-item-icon: url('../../images/results-summary/icon-memory.svg');
     --item-color: var(--clr-primary-yellow-300);
     --item-bg-color: var(--clr-bg-yellow-300);
 }
 .summary__item[data-item="verbal"] {
-    --svg-item-icon: url('../../../images/results-summary/icon-verbal.svg');
+    --svg-item-icon: url('../../images/results-summary/icon-verbal.svg');
     --item-color: var(--clr-primary-green-300);
     --item-bg-color: var(--clr-bg-green-300);
 }
 .summary__item[data-item="visual"] {
-    --svg-item-icon: url('../../../images/results-summary/icon-visual.svg');
+    --svg-item-icon: url('../../images/results-summary/icon-visual.svg');
     --item-color: var(--clr-primary-blue-300);
     --item-bg-color: var(--clr-bg-blue-300);
 }
