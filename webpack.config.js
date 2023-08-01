@@ -62,10 +62,36 @@ const optimization = () => {
 const buildPlugins = () => {
     const basePlugins = [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src', 'index.html'),
-            minify: {
-                collapseWhitespace: isProd
-            }
+          filename: 'index.html',
+          template: path.resolve(__dirname, 'src', 'index.html'),
+          minify: {
+              collapseWhitespace: isProd
+          },
+          chunks: ['index'],
+        }),
+        new HtmlWebpackPlugin({
+          filename: 'google.html',
+          template: path.resolve(__dirname, 'src', 'pages', 'google', 'index.html'),
+          minify: {
+              collapseWhitespace: isProd
+          },
+          chunks: ['google'],
+        }),
+        new HtmlWebpackPlugin({
+          filename: 'product-card.html',
+          template: path.resolve(__dirname, 'src', 'pages', 'product-preview-card', 'index.html'),
+          minify: {
+              collapseWhitespace: isProd
+          },
+          chunks: ['product-card'],
+        }),
+        new HtmlWebpackPlugin({
+          filename: 'results-summary.html',
+          template: path.resolve(__dirname, 'src', 'pages', 'results-summary', 'index.html'),
+          minify: {
+              collapseWhitespace: isProd
+          },
+          chunks: ['results-summary'],
         }),
         new MiniCssExtractPlugin({
             filename: './css/[name].[contenthash:8].css',
@@ -80,14 +106,21 @@ const buildPlugins = () => {
         })
     ]
 
-    if (isProd) {}
+    if (isProd) {
+    // some code
+    }
     return basePlugins;
 }
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: isDev ? 'development' : 'production',
-    entry: './js/index.js',
+    entry: {
+      index: './js/index.js',
+      google: './js/google.js',
+      'product-card': './js/product-card.js',
+      'results-summary': './js/results-summary.js',
+    },
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
@@ -117,7 +150,14 @@ module.exports = {
         {
             test:  /\.css$/i,
             use: [
-                MiniCssExtractPlugin.loader,
+              {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                      publicPath: (resourcePath, context) => {
+                        return path.relative(path.dirname(resourcePath), context) + '/';
+                      },
+                  }
+              },
                "css-loader",
               ]
         },
