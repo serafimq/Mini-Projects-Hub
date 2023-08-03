@@ -1,27 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="page" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png">
   <title>Frontend Mentor | Space tourism website</title>
 </head>
-<body>
-
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
-
-  So, you want to travel to
-  Space
-  Let’s face it; if you want to go to space, you might as well genuinely go to 
-  outer space and not hover kind of on the edge of it. Well sit back, and relax 
-  because we’ll give you a truly out of this world experience!
-
-  Explore
+<body class="page__body">
+  
+  <header class="header flex">
+    <div class="logo">
+      <svg class="logo__icon" width="40" height="40">
+        <use href="../../images/space-tourism/shared/icons.svg#logo" />
+      </svg>
+    </div>
+    <button 
+      class="navigation__toggle"
+      aria-controls="navigation__list"
+      aria-expanded="false"
+    >
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav class="navigation">
+      <ul 
+      id="navigation__list" 
+      data-visible="false"
+      class="navigation__list flex"
+      >
+        <li><a href="#" class="navigation__link"><span aria-hidden="true">00</span> Home</a></li>
+        <li><a href="#" class="navigation__link"><span aria-hidden="true">01</span> Destination</a></li>
+        <li><a href="#" class="navigation__link"><span aria-hidden="true">02</span> Crew</a></li>
+        <li><a href="#" class="navigation__link"><span aria-hidden="true">03</span> Technology</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="main__container">
+    <div class="main__content">
+      <p class="main__subtitle">So, you want to travel to</p>
+      <h1 class="main__title">Space</h1>
+      <p class="main__text">
+        Let’s face it; if you want to go to space, you might as well genuinely go to
+        outer space and not hover kind of on the edge of it. Well sit back, and relax
+        because we’ll give you a truly out of this world experience!
+      </p>
+    </div>
+    <a href="#" class="main__button button">Explore</a>
+  </div>
 
 </body>
 </html>

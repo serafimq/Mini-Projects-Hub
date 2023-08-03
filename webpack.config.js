@@ -93,6 +93,14 @@ const buildPlugins = () => {
           },
           chunks: ['results-summary'],
         }),
+        new HtmlWebpackPlugin({
+          filename: 'space-tourism.html',
+          template: path.resolve(__dirname, 'src', 'pages', 'space-tourism', 'index.html'),
+          minify: {
+              collapseWhitespace: isProd
+          },
+          chunks: ['space-tourism'],
+        }),
         new MiniCssExtractPlugin({
             filename: './css/[name].[contenthash:8].css',
             chunkFilename: './css/[name].[contenthash:8].css',
@@ -120,11 +128,12 @@ module.exports = {
       google: './js/google.js',
       'product-card': './js/product-card.js',
       'results-summary': './js/results-summary.js',
+      'space-tourism': './js/space-tourism.js',
     },
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: 'images/[hash][ext][query]',
+        assetModuleFilename: 'images/[name].[contenthash][ext]',
         publicPath: '',
         clean: true
     },
@@ -154,7 +163,8 @@ module.exports = {
                   loader: MiniCssExtractPlugin.loader,
                   options: {
                       publicPath: (resourcePath, context) => {
-                        return path.relative(path.dirname(resourcePath), context) + '/';
+                        const newPath = path.relative(path.dirname(resourcePath), context) + '/';
+                        return newPath.replace(/\\/g, "/");
                       },
                   }
               },
@@ -168,7 +178,8 @@ module.exports = {
                 loader: MiniCssExtractPlugin.loader,
                 options: {
                     publicPath: (resourcePath, context) => {
-                      return path.relative(path.dirname(resourcePath), context) + '/';
+                      const newPath = path.relative(path.dirname(resourcePath), context) + '/';
+                      return newPath.replace(/\\/g, "/");
                     },
                 }
             },
@@ -190,13 +201,16 @@ module.exports = {
           }
         },
         {
-            test: /\.(png|jpe?g|gif|svg)$/i,
+            test: /\.(png|jpe?g|gif)$/i,
             type: 'asset/resource'
         },
         {
-            test: /\.(jpe?g|png|gif|svg)$/i,
-            type: "asset",
-          },
+            test: /\.svg$/,
+            type: 'asset/resource',
+            generator: {
+                filename: path.join('icons/[name].[contenthash][ext]').replace(/\\/g, "/"),
+            },
+        },
         {
             test: /\.(woff2|woff)$/i,
             type: 'asset/resource',

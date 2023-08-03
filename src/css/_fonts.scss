@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Hanken Grotesk';
+  src: url('../fonts/results-summary/HankenGrotesk-Medium.woff2') format('woff2'),
+      url('../fonts/results-summary/HankenGrotesk-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk ExtraBold';
+  src: url('../fonts/results-summary/HankenGrotesk-ExtraBold.woff2') format('woff2'),
+      url('../fonts/results-summary/HankenGrotesk-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk Bold';
+  src: url('../fonts/results-summary/HankenGrotesk-Bold.woff2') format('woff2'),
+      url('../fonts/results-summary/HankenGrotesk-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* barlow-regular - latin */
+@font-face {
+    font-display: swap; 
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/space-tourism/barlow-v12-latin-regular.woff2') format('woff2'); 
+  }
+
+  /* barlow-condensed-regular - latin */
+@font-face {
+    font-display: swap; 
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/space-tourism/barlow-condensed-v12-latin-regular.woff2') format('woff2'); 
+  }
+
+  /* bellefair-regular - latin */
+@font-face {
+    font-display: swap; 
+    font-family: 'Bellefair';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/space-tourism/bellefair-v14-latin-regular.woff2') format('woff2'); 
+  }
