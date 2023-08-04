@@ -1,34 +1,67 @@
 .main {
     &__container {
         --max-width: 375px;
-        --padding: 24px;
+        --padding: 2.4rem;
     
         max-width: var(--max-width, 375px);
         margin-left: auto;
         margin-right: auto;
+        padding-bottom: 4.8rem;
         padding-left: var(--padding);
         padding-right: var(--padding);
+
+        display: grid;
+        justify-items: center;
+        gap: 8.1rem;
+
+        @media (min-width: 560px) {
+            --max-width: 560px;
+            --padding: 4rem;
+            padding-bottom: 6rem;
+            gap: 12rem;
+        }
         
         // когда ширина 769px или больше
-        @media (min-width: 769px) {
+        @media (min-width: 768px) {
             --max-width: 768px;
-            --padding: 161px;
+            --padding: 15rem;
+            padding-bottom: 9rem;
+            gap: 15.6rem;
+        }
+        // когда ширина 1024px или больше
+        @media (min-width: 1024px) {
+            --max-width: 1024px;
+            --padding: 16.2rem;
+            grid-template-columns: 1fr 1fr;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 251px;
+            padding-bottom: 11rem;
         }
         // когда ширина 1440px или больше
         @media (min-width: 1440px) {
             --max-width: 1440px;
-            --padding: 165px;
+            --padding: 16.5rem;
+            padding-bottom: 13.1rem;
         }
-
-        display: grid;
-        justify-items: center;
-        gap: var(--size-900);
     }
 
     &__content {
+        --gap: 1.6rem;
         display: grid;
-        gap: var(--fs-300);
+        gap: var(--gap);
         text-align: center;
+
+        @media (min-width: 768px) {
+            --gap: 2.4rem;
+        }
+
+        @media (min-width: 1024px) {
+            flex: 1 1 50%;
+            max-width: 445px;
+        }
+
     }
 
     &__subtitle {
@@ -36,16 +69,29 @@
         font-size: var(--fs-primary-subheading);
         text-transform: uppercase;
         letter-spacing: 2.7px;
+
+        @media (min-width: 768px) {
+            letter-spacing: 3.375px;
+        }
     }
 
     &__title {
         color: var(--clr-neutral-100);
         font-family: var(--ff-accent);
         font-size: var(--fs-primary-heading);
-        line-height: var(--size-1000);
+        text-transform: uppercase;
+        line-height: 10rem;
+
+        @media (min-width: 768px) {
+            line-height: 15rem;
+        }
     }
 
     &__text {
-        line-height: var(--size-500);
+        line-height: 2.5rem;
+        
+        @media (min-width: 768px) {
+            line-height: 2.8rem;
+        }
     }
 }

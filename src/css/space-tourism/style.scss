@@ -9,9 +9,30 @@ a {
     text-decoration: none;
 }
 
+html {
+    // от 375 до 500
+    font-size: calc(100vw / 375 * 10); // <= указываем разрешение из макета (мобила)
+    @media (min-width: 560px) { // от 500px до 768px
+        font-size: calc(100vw / 560 * 10); // <= указываем разрешение из макета (планшет)
+    }
+    
+    @media (min-width: 768px) { // от 767px до 1024px
+        font-size: calc(100vw / 768 * 10);
+    }
+    @media (min-width: 1024px) { // от 1024px до 1440px
+        font-size: calc(100vw / 1440 * 10); // <= указываем разрешение из макета (десктоп)
+    }
+    @media (min-width: 1441px) { // от 1440px до 1920px
+        font-size: calc(100vw / 1920 * 10); // <= указываем разрешение из макета (4k десктоп)
+    }
+}
+
 .page,
 .page__body {
-    height: 100%;
+    min-height: 100%;
+    .menu-open {
+        overflow-y: hidden;
+    }
 }
 
 .page__body {
@@ -30,13 +51,13 @@ a {
     @media (min-width: 560px) {
         background-image: urL("../../images/space-tourism/home/background-home-tablet.jpg");
     }
-    @media (min-width: 880px) {
+    @media (min-width: 1024px) {
         background-image: urL("../../images/space-tourism/home/background-home-desktop.jpg");
     }
 }
 
 .button {
-    --fs-button: 9.375rem;
+    --size-btn: 15rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -46,14 +67,21 @@ a {
     border-radius: 100vmax;
     font-family: var(--ff-accent);
     font-weight: var(--fw-regular);
-    font-size: var(--fs-400);
+    font-size: var(--fs-button);
     line-height: 1;
     color: var(--clr-neutral-900);
     background-color: var(--clr-neutral-100);
-    width: var(--fs-button);
-    height: var(--fs-button);
+    width: var(--size-btn);
+    height: var(--size-btn);
     text-transform: uppercase;
-    letter-spacing: 1.25px;
+    letter-spacing: 0.125rem;
+    
+    @media (min-width: 768px) {
+        --size-btn: 24.2rem;
+    }
+    @media (min-width: 1440px) {
+        --size-btn: 27.4rem;
+    }
 }
 
 .visually-hidden:not(:focus):not(:active) {
@@ -77,25 +105,47 @@ a {
 }
 
 .header {
+    position: relative;
     align-items: center;
     justify-content: space-between;
+    padding-left: 2.4rem;
+    padding-top: 2.4rem;
+    margin-bottom: 4.8rem;
 
-    @media (max-width: 560px) {
-        padding: 1.5rem;
+    @media (min-width: 560px) {
+        padding-left: 3.9rem;
+        padding-top: 0;
+        margin-bottom: 10.6rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding-left: 5.5rem;
+        padding-top: 4rem;
+        margin-bottom: 7.6rem;
     }
 }
 
 .logo {
-    margin-left: var(--fs-700);
-    min-height: 40px;
-    min-width: 40px;
+    --fz-logo: 4rem;
+    min-height: var(--fz-logo);
+    min-width: var(--fz-logo);
 
-    @media (max-width: 560px) {
-        margin-left: 0;
+    @media (min-width: 1024px) {
+        &::before {
+            position: absolute;
+            content: "";
+            height: 0.1rem;
+            width: 48%;
+            background-color: hsla(0, 0%, 100%, 0.4);
+            bottom: 35%;
+            left: 10%;
+            z-index: 1001;
+        }
     }
 }
 
 .navigation {
+    position: relative;
     text-transform: uppercase;
 
     &__toggle {
@@ -110,10 +160,10 @@ a {
             z-index: 9999;
             background-image: url('../../images/space-tourism/shared/icon-hamburger.svg');
             background-repeat: no-repeat;
-            width: 2rem;
+            width: 2.4rem;
             aspect-ratio: 1;
-            top: 2rem;
-            right: 2rem;
+            top: 3.4rem;
+            right: 2.4rem;
         }
 
         &[aria-expanded="true"] {
@@ -122,38 +172,70 @@ a {
     }
 
     &__list {
-        --gap: 2rem;
+        --gap: 3.2rem;
         background: hsl(0 0% 0% / 0.7);
+        font-size: 1.4rem;
 
         @supports (backdrop-filter: blur(1rem)) {
-            background: hsl(0 0% 100% / 0.4);
-            backdrop-filter: blur(1rem);
+            background: hsl(0 0% 100% / 0.05);
+            backdrop-filter: blur(1.5rem);
         }
 
         @media (max-width: 560px) {
             flex-direction: column;
             position: fixed;
             z-index: 1000;
-            inset: 0 0 0 25%;
+            inset: 0 0 0 33%;
 
-            padding: min(25vh, 7rem) 2rem;
+            padding: min(25vh, 11.8rem) 3.2rem;
             transform: translateX(100%);
             transition: transform 350ms ease-out;
+            align-items: start;
         }
 
-        @media (min-width: 560px) {
-            padding-block: 2.5rem;
+        @media (min-width: 560px) and (max-width: 1024px) {
+            --gap: 2.5rem;
+            padding-block: 3.6rem;
+            padding-inline: clamp(2rem, 10vw, 4.7rem);
+            font-size: 1.3rem;
+        }
+
+        @media (min-width: 1024px) {
+            font-size: 1.4rem;
+            padding-block: 3.6rem;
             padding-inline: clamp(5rem, 10vw, 10rem);
             --gap: 3rem;
         }
 
-        @media (min-width: 560px) and (max-width: 880px) {
-            --gap: 2.5rem;
-            padding-inline: clamp(3rem, 10vw, 10rem);
-        }
-
         &[data-visible="true"] {
             transform: translateX(0%);
+        }
+
+        li {
+            position: relative;
+            &::after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 0.3rem;
+                background-color: var(--clr-neutral-100);
+                top: 5.4rem;
+                transition: all 500ms ease;
+                opacity: 0;
+                left: -2rem;
+
+                @media (max-width: 560px) {
+                    top: 3rem;
+                }
+
+                @media (min-width: 560px) and (max-width: 1024px) {
+                    top: 5.1rem;
+                }
+            }
+            &:hover::after {
+                opacity: 1;
+                left: 0;
+            }
         }
     }
     
@@ -164,7 +246,7 @@ a {
         span {
             font-weight: var(--fw-bold);
 
-            @media (min-width: 560px) and (max-width: 880px) {
+            @media (min-width: 560px) and (max-width: 1024px) {
                 display: none;
             }
         }

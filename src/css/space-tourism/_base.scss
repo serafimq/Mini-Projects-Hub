@@ -1,4 +1,8 @@
 :root {
+    --fs-media-mobile: 560px;
+    --fs-media-laptop: 880px;
+    --fs-media-decktop: 1440px;
+
     --clr-primary-400: hsl(231, 77%, 90%);
 
     --clr-neutral-900: hsl(230, 35%, 7%);
@@ -14,39 +18,81 @@
     --fw-regular: 400;
     --fw-bold: 700;
 
-    --fs-200: 0.875rem; // 14px // 0.875rem; // 14px
-    --fs-300: 1rem; // 16px // 1rem; // 16px
-    --fs-400: 1.125rem; // 18px
-    --fs-500: 1.75rem; // 28px // 1.75rem; // 28px
-    --fs-600: 2rem; // 32px // 2rem; // 32px 
-    --fs-700: 3.5rem; // 56px // 3.5rem; // 56px
-    --fs-800: 6.25rem; // 100px // 6.25rem; // 100px
-    --fs-900: 5rem; // 80px // 9.375rem; // 150px
+    // 1rem = 10px 
+    --fs-200: 1.4rem;
+    --fs-300: 1.5rem; // text
+    --fs-400: 1.6rem; // main subtitle
+    --fs-500: 2rem; // main btn
+    --fs-600: 2.8rem; // sec sub
 
-    --fs-body: var(--fs-400);
+    --fs-700: 2.4rem; // third heading
+    --fs-800: 5.6rem; // second heading
+    --fs-900: 8rem; // main header
 
-    --fs-primary-heading: var(--fs-900);
-    --fs-secondary-heading: var(--fs-800);
-    --fs-tertiary-heading: var(--fs-700);
+    @media (min-width: 560px) {
+        // вот тут размеры для планшета и вверх 
+        --fs-200: 1.4rem; 
+        --fs-300: 1.6rem; // text
+        --fs-400: 2rem; // main subtitle
+        --fs-500: 3.2rem; // main btn
+
+        --fs-700: 4rem; // third heading
+        --fs-800: 8rem; // second heading
+        --fs-900: 10rem;  // main heading
+    }
+    @media (min-width: 768px) {
+        // вот тут размеры для десктопа и вверх 
+        --fs-200: 1.4rem; 
+        --fs-300: 1.8rem; // text
+        --fs-400: 1.6rem; // main subtitle
+        --fs-500: 3.2rem; // main btn
+
+        --fs-700: 5.6rem; // third heading
+        --fs-800: 10rem; // second heading
+    }
+    @media (min-width: 1024px) {
+        // вот тут размеры для десктопа и вверх 
+        --fs-200: 1.4rem; 
+        --fs-300: 1.8rem; // text
+        --fs-400: 2.8rem; // main subtitle
+        --fs-500: 3.2rem; // main btn
+
+        --fs-700: 5.6rem; // third heading
+        --fs-800: 10rem; // second heading
+    }
+    @media (min-width: 1440px) {
+        // посмотреть по необходимости
+    }
+
+    --fs-body: var(--fs-300); // +
+    --fs-nav: var(--fs-300);
+    --fs-button: var(--fs-500); // +
+
+    --fs-primary-heading: var(--fs-900); // +
+    --fs-secondary-heading: var(--fs-800); // +
+    --fs-tertiary-heading: var(--fs-700); // +
+
     --fs-quaternary-heading: var(--fs-600);
     --fs-quinary-heading: var(--fs-500);
-    --fs-primary-subheading: var(--fs-400);
+
+    --fs-primary-subheading: var(--fs-400); // +
     --fs-secondary-subheading: var(--fs-200);
 
-    --fs-nav: var(--fs-300);
 
-    --size-100: 0.25rem; // 4px 
-    --size-200: 0.5rem; // 8px 
-    --size-300: 0.75rem; // 12px 
-    --size-400: 1rem; // 16px 
-    --size-500: 1.5rem; // 24px
-    --size-600: 2rem; // 32px 
-    --size-700: 3rem; // 48px   
-    --size-800: 4rem; // 64px 
-    --size-900: 5rem; // 80px 
-    --size-1000: 6.25rem; // 100px 
-
-    --fs-media-mobile: 375px;
-    --fs-media-laptop: 769px;
-    --fs-media-decktop: 1440px;
+    --size-100: 0.4rem;
+    --size-200: 0.8rem;
+    --size-300: 1.2rem;
+    --size-400: 1.6rem;
+    --size-500: 1.5rem;
+    --size-600: 2.4rem;
+    --size-700: 4.8rem;  
+    --size-800: 6.4rem;
+    --size-900: 8rem;
+    --size-1000: 10rem;
 }
+
+
+// @media (min-width: var(--fs-media-mobile)) {
+// }
+// @media (min-width: var(--fs-media-laptop)) {
+// }
